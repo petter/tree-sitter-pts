@@ -1,9 +1,10 @@
 module.exports = grammar(require('tree-sitter-typescript/typescript'), {
     name: 'pts',
     rules: {
-        _statement: ($, previous) => choice(...[$.template_statement, ...prevous.members],
-        template_statement: $ => seq(
+        _declaration: ($, previous) => choice(...[...prevous.members, $.template_declaration],
+        template_declaration: $ => seq(
             'template',
+            field('name', $.identifier),
             field('body', $.statement_block)
         )
     }
