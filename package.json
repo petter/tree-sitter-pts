@@ -8,8 +8,12 @@
     },
     "author": "Petter Sæther Moen",
     "repository": {
-        "type" : "git",
-        "url" : "https://github.com/petter/tree-sitter-pts.git"
+        "type": "git",
+        "url": "https://github.com/petter/tree-sitter-pts.git"
     },
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "tree-sitter-cli": "^0.17.3",
+        "tree-sitter-typescript": "^0.16.1"
+    }
 }
