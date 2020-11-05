@@ -1,0 +1,13 @@
+=======================
+Template decleration
+=======================
+
+template T1 {
+
+}
+
+---
+(program
+    (template_declaration
+        name: (identifier)
+        body: (statement_block)))

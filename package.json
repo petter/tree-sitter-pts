@@ -1,19 +1,23 @@
 {
-    "name": "tree-sitter-pts",
-    "version": "1.0.0",
-    "description": "Grammar for TypeScript with Package Templates",
-    "scripts": {
-        "build": "tree-sitter generate",
-        "test": "tree-sitter test"
-    },
-    "author": "Petter Sæther Moen",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/petter/tree-sitter-pts.git"
-    },
-    "license": "ISC",
-    "devDependencies": {
-        "tree-sitter-cli": "^0.17.3",
-        "tree-sitter-typescript": "^0.16.1"
-    }
+  "name": "tree-sitter-pts",
+  "version": "1.0.0",
+  "description": "Grammar for TypeScript with Package Templates",
+  "scripts": {
+    "build": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "author": "Petter Sæther Moen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petter/tree-sitter-pts.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.17.1",
+    "tree-sitter-javascript": "^0.16.0",
+    "tree-sitter-typescript": "^0.16.1"
+  },
+  "dependencies": {
+    "nan": "^2.14.2"
+  }
 }
