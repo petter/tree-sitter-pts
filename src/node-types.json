@@ -435,6 +435,32 @@
     "fields": {}
   },
   {
+    "type": "addto_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "class_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "ambient_declaration",
     "named": true,
     "fields": {},
@@ -1356,6 +1382,21 @@
         },
         {
           "type": "implements_clause",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_rename",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "rename",
           "named": true
         }
       ]
@@ -2941,6 +2982,32 @@
     }
   },
   {
+    "type": "inst_statement",
+    "named": true,
+    "fields": {
+      "template_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "class_rename",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "interface_declaration",
     "named": true,
     "fields": {
@@ -4194,6 +4261,21 @@
     }
   },
   {
+    "type": "package_template_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "inst_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "pair",
     "named": true,
     "fields": {
@@ -4510,6 +4592,32 @@
     }
   },
   {
+    "type": "rename",
+    "named": true,
+    "fields": {
+      "new": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "old": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "required_parameter",
     "named": true,
     "fields": {
@@ -4797,7 +4905,7 @@
         "required": true,
         "types": [
           {
-            "type": "statement_block",
+            "type": "package_template_body",
             "named": true
           }
         ]
@@ -5899,6 +6007,10 @@
     "named": false
   },
   {
+    "type": "->",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
   },
@@ -6008,6 +6120,10 @@
   },
   {
     "type": "abstract",
+    "named": false
+  },
+  {
+    "type": "addto",
     "named": false
   },
   {
@@ -6151,6 +6267,10 @@
     "named": false
   },
   {
+    "type": "inst",
+    "named": false
+  },
+  {
     "type": "instanceof",
     "named": false
   },
@@ -6200,6 +6320,10 @@
   },
   {
     "type": "of",
+    "named": false
+  },
+  {
+    "type": "package",
     "named": false
   },
   {
