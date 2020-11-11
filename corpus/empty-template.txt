@@ -1,0 +1,13 @@
+==========================
+Empty template decleration
+==========================
+
+template T1 {
+
+}
+
+---
+(program
+    (template_declaration
+        name: (identifier)
+        body: (package_template_body)))

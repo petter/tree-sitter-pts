@@ -1,0 +1,21 @@
+===========================
+Closed template decleration
+===========================
+
+template T {
+    class A {
+        i = 0; 
+    }
+}
+
+---
+(program
+    (template_declaration
+        name: (identifier)
+        body: (package_template_body
+                (class_declaration
+                    name: (type_identifier)
+                    body: (class_body
+                            (public_field_definition
+                                name: (property_identifier)
+                                value: (number)))))))

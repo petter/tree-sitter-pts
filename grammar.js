@@ -1,7 +1,7 @@
 module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
   name: 'pts',
   rules: {
-    _declaration: ($, previous) => choice(previous, $.template_declaration),
+    _declaration: ($, previous) => choice(previous, $.template_declaration, $.package_declaration),
 
     template_declaration: $ =>
       seq(
@@ -29,10 +29,11 @@ module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
       seq(
         'inst',
         field('template_name', $.identifier),
-        optional(seq('{', repeat1($.class_rename), '}', ';'))
+        optional(seq('{', field('renamings', repeat1($.class_rename)), '}'), ),
+        ';'
       ),
     class_rename: $ =>
-      seq($.rename, optional(seq('(', repeat1($.rename), ')'))),
+      seq(field('class', $.rename), optional(seq('(', field('fields', repeat1($.rename)), ')'))),
     rename: $ =>
       seq(field('old', $.identifier), '->', field('new', $.identifier)),
 

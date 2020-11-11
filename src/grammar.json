@@ -413,6 +413,10 @@
         {
           "type": "SYMBOL",
           "name": "template_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_declaration"
         }
       ]
     },
@@ -8691,19 +8695,19 @@
                   "value": "{"
                 },
                 {
-                  "type": "REPEAT1",
+                  "type": "FIELD",
+                  "name": "renamings",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "class_rename"
+                    "type": "REPEAT1",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "class_rename"
+                    }
                   }
                 },
                 {
                   "type": "STRING",
                   "value": "}"
-                },
-                {
-                  "type": "STRING",
-                  "value": ";"
                 }
               ]
             },
@@ -8711,6 +8715,10 @@
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },
@@ -8718,8 +8726,12 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "rename"
+          "type": "FIELD",
+          "name": "class",
+          "content": {
+            "type": "SYMBOL",
+            "name": "rename"
+          }
         },
         {
           "type": "CHOICE",
@@ -8732,10 +8744,14 @@
                   "value": "("
                 },
                 {
-                  "type": "REPEAT1",
+                  "type": "FIELD",
+                  "name": "fields",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "rename"
+                    "type": "REPEAT1",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "rename"
+                    }
                   }
                 },
                 {

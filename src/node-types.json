@@ -52,6 +52,10 @@
         "named": true
       },
       {
+        "type": "package_declaration",
+        "named": true
+      },
+      {
         "type": "template_declaration",
         "named": true
       },
@@ -1390,16 +1394,27 @@
   {
     "type": "class_rename",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "rename",
-          "named": true
-        }
-      ]
+    "fields": {
+      "class": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "rename",
+            "named": true
+          }
+        ]
+      },
+      "fields": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "rename",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -2985,6 +3000,16 @@
     "type": "inst_statement",
     "named": true,
     "fields": {
+      "renamings": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "class_rename",
+            "named": true
+          }
+        ]
+      },
       "template_name": {
         "multiple": false,
         "required": true,
@@ -2995,16 +3020,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "class_rename",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -4258,6 +4273,32 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "package_declaration",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "package_template_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -6324,11 +6365,11 @@
   },
   {
     "type": "number",
-    "named": false
+    "named": true
   },
   {
     "type": "number",
-    "named": true
+    "named": false
   },
   {
     "type": "of",
