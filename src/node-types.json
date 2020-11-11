@@ -4269,7 +4269,34 @@
       "required": false,
       "types": [
         {
+          "type": "package_template_body_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_template_body_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "addto_statement",
+          "named": true
+        },
+        {
+          "type": "class_declaration",
+          "named": true
+        },
+        {
           "type": "inst_statement",
+          "named": true
+        },
+        {
+          "type": "interface_declaration",
           "named": true
         }
       ]
@@ -6312,11 +6339,11 @@
   },
   {
     "type": "number",
-    "named": false
+    "named": true
   },
   {
     "type": "number",
-    "named": true
+    "named": false
   },
   {
     "type": "of",

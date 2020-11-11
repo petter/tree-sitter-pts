@@ -8635,7 +8635,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "inst_statement"
+            "name": "package_template_body_decl"
           }
         },
         {
