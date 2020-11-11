@@ -16,8 +16,8 @@ module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
         field('body', $.package_template_body)
       ),
 
-    package_template_body: $ => seq('{', repeat($.package_template_body_decl), '}'),
-    package_template_body_decl: $ =>
+    package_template_body: $ => seq('{', repeat($._package_template_body_decl), '}'),
+    _package_template_body_decl: $ =>
       choice(
         $.inst_statement,
         $.addto_statement,

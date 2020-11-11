@@ -8635,7 +8635,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "package_template_body_decl"
+            "name": "_package_template_body_decl"
           }
         },
         {
@@ -8644,7 +8644,7 @@
         }
       ]
     },
-    "package_template_body_decl": {
+    "_package_template_body_decl": {
       "type": "CHOICE",
       "members": [
         {
