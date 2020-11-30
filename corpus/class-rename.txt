@@ -28,7 +28,9 @@ package P {
         body: (package_template_body
                 (inst_statement
                     template_name: (identifier)
-                    renamings: (class_rename 
-                                    class: (rename
-                                                old: (identifier)
-                                                new: (identifier)))))))
+                    renamings: 
+                            (class_renamings
+                                (class_rename 
+                                        class: (rename
+                                                    old: (identifier)
+                                                    new: (identifier))))))))

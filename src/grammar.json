@@ -8698,11 +8698,8 @@
                   "type": "FIELD",
                   "name": "renamings",
                   "content": {
-                    "type": "REPEAT1",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "class_rename"
-                    }
+                    "type": "SYMBOL",
+                    "name": "class_renamings"
                   }
                 },
                 {
@@ -8719,6 +8716,31 @@
         {
           "type": "STRING",
           "value": ";"
+        }
+      ]
+    },
+    "class_renamings": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "class_rename"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "class_rename"
+              }
+            ]
+          }
         }
       ]
     },
@@ -8747,11 +8769,8 @@
                   "type": "FIELD",
                   "name": "fields",
                   "content": {
-                    "type": "REPEAT1",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "rename"
-                    }
+                    "type": "SYMBOL",
+                    "name": "field_renamings"
                   }
                 },
                 {
@@ -8764,6 +8783,31 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "field_renamings": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "rename"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "rename"
+              }
+            ]
+          }
         }
       ]
     },

@@ -29,11 +29,15 @@ module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
       seq(
         'inst',
         field('template_name', $.identifier),
-        optional(seq('{', field('renamings', repeat1($.class_rename)), '}'), ),
+        optional(seq('{', field('renamings', $.class_renamings), '}')),
         ';'
       ),
+    class_renamings: $ => 
+        seq($.class_rename, repeat(seq(',', $.class_rename))),
     class_rename: $ =>
-      seq(field('class', $.rename), optional(seq('(', field('fields', repeat1($.rename)), ')'))),
+      seq(field('class', $.rename), optional(seq('(', field('fields', $.field_renamings), ')'))),
+    field_renamings: $ =>
+        seq($.rename, repeat(seq(',', $.rename))), 
     rename: $ =>
       seq(field('old', $.identifier), '->', field('new', $.identifier)),
 

@@ -1,0 +1,50 @@
+=====================
+Multiple class rename
+=====================
+
+template T {
+    class A {
+        i = 0; 
+    }
+
+    class B {
+        j = 1;
+    }
+}
+
+package P {
+    inst T { A -> B, B -> C };
+}
+
+---
+(program
+    (template_declaration
+        name: (identifier)
+        body: (package_template_body
+                (class_declaration
+                    name: (type_identifier)
+                    body: (class_body
+                            (public_field_definition
+                                name: (property_identifier)
+                                value: (number))))
+                (class_declaration
+                    name: (type_identifier)
+                    body: (class_body
+                            (public_field_definition
+                                name: (property_identifier)
+                                value: (number))))))
+    (package_declaration
+        name: (identifier)
+        body: (package_template_body
+                (inst_statement
+                    template_name: (identifier)
+                    renamings: 
+                            (class_renamings
+                                (class_rename 
+                                        class: (rename
+                                                    old: (identifier)
+                                                    new: (identifier)))
+                                (class_rename 
+                                        class: (rename
+                                                    old: (identifier)
+                                                    new: (identifier))))))))

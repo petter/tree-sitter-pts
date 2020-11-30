@@ -1406,15 +1406,30 @@
         ]
       },
       "fields": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "rename",
+            "type": "field_renamings",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "class_renamings",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_rename",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2053,6 +2068,21 @@
         },
         {
           "type": "type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_renamings",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "rename",
           "named": true
         }
       ]
@@ -3001,11 +3031,11 @@
     "named": true,
     "fields": {
       "renamings": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "class_rename",
+            "type": "class_renamings",
             "named": true
           }
         ]
@@ -6365,11 +6395,11 @@
   },
   {
     "type": "number",
-    "named": true
+    "named": false
   },
   {
     "type": "number",
-    "named": false
+    "named": true
   },
   {
     "type": "of",
