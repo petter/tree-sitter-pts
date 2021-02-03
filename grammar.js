@@ -1,6 +1,10 @@
 module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
   name: 'pts',
   rules: {
+    _property_name: $ => alias(choice(
+      $.identifier,
+      $._reserved_identifier
+    ), $.property_identifier),
     _declaration: ($, previous) => choice(previous, $.template_declaration, $.package_declaration),
 
     template_declaration: $ =>
