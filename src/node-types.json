@@ -442,11 +442,15 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "class_body",
+          "named": true
+        },
+        {
+          "type": "class_heritage",
           "named": true
         }
       ]
