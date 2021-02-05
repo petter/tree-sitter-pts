@@ -1,0 +1,46 @@
+======================
+addto-statement
+======================
+
+template T {
+    class A {
+        i = 0; 
+    }
+}
+
+package P {
+    class C {
+        j = 0;
+    }
+    inst T;
+    addto A extends C {}
+}
+
+---
+(program
+    (template_declaration
+        name: (identifier)
+        body: (package_template_body
+                (class_declaration
+                    name: (type_identifier)
+                    body: (class_body
+                            (public_field_definition
+                                name: (property_identifier)
+                                value: (number))))))
+    (package_declaration
+        name: (identifier)
+        body: (package_template_body
+                (class_declaration
+                    name: (type_identifier)
+                    body: (class_body
+                            (public_field_definition
+                                name: (property_identifier)
+                                value: (number))))
+                (inst_statement
+                    template_name: (identifier))
+                (addto_statement
+                    name: (type_identifier)
+                    heritage: (class_heritage
+                        (extends_clause
+                            (type_identifier)))
+                    body: (class_body)))))

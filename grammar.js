@@ -46,6 +46,6 @@ module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
       seq(field('old', $.identifier), '->', field('new', $.identifier)),
 
     addto_statement: $ =>
-      seq('addto', field('name', $.identifier), optional($.class_heritage), $.class_body, ';'),
+      seq('addto', field('name', $._type_identifier), optional(field('heritage', $.class_heritage)), field('body', $.class_body)), 
   },
 });

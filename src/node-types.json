@@ -430,30 +430,36 @@
     "type": "addto_statement",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "class_body",
+            "named": true
+          }
+        ]
+      },
+      "heritage": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "class_heritage",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "type_identifier",
             "named": true
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "class_body",
-          "named": true
-        },
-        {
-          "type": "class_heritage",
-          "named": true
-        }
-      ]
     }
   },
   {

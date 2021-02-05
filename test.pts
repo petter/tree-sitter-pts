@@ -1,0 +1,12 @@
+template T {
+    class A {
+        i = 0;
+    }
+}
+
+package P {
+    class C {
+        j = 0;
+    }
+    addto A extends C {}
+}
