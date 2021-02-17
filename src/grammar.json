@@ -8591,7 +8591,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "package"
+          "value": "pack"
         },
         {
           "type": "FIELD",

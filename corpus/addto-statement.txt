@@ -8,7 +8,7 @@ template T {
     }
 }
 
-package P {
+pack P {
     class C {
         j = 0;
     }

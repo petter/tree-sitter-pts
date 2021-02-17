@@ -15,7 +15,7 @@ module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
       ),
     package_declaration: $ =>
       seq(
-        'package',
+        'pack',
         field('name', $.identifier),
         field('body', $.package_template_body)
       ),
