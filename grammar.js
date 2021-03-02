@@ -34,7 +34,7 @@ module.exports = grammar(require('tree-sitter-typescript/typescript/grammar'), {
         'inst',
         field('template_name', $.identifier),
         optional(seq('{', field('renamings', $.class_renamings), '}')),
-        ';'
+        optional($._semicolon)
       ),
     class_renamings: $ => 
         seq($.class_rename, repeat(seq(',', $.class_rename))),
